@@ -5,9 +5,9 @@ namespace WpfLib.Helpers
 {
     public static class MsgBox
     {
-        public static void InforMation(string message, bool isRtl, string title = "", MessageBoxImage image = MessageBoxImage.Information)
+        public static void InforMation(string message, string title = "", MessageBoxImage image = MessageBoxImage.Information)
         {
-            if (isRtl)
+            if (LocaleDictionary.IsRtl == true)
                  MessageBox.Show(
                                    message,
                                    title ?? AppDomain.CurrentDomain.FriendlyName,
@@ -26,9 +26,9 @@ namespace WpfLib.Helpers
                        );
         }
 
-        public static MessageBoxResult Question (string message, bool isRtl, string title = "")
+        public static MessageBoxResult Question (string message, string title = "")
         {
-            if (isRtl)
+            if (LocaleDictionary.IsRtl == true)
                 return  MessageBox.Show(
                                    message,
                                    title ?? AppDomain.CurrentDomain.FriendlyName,
